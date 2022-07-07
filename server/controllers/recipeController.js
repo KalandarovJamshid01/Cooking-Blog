@@ -50,6 +50,18 @@ exports.exploreRecipe = async (req, res) => {
   }
 };
 
+exports.exploreCategoriesById = async (req, res) => {
+  try {
+    let categoryId = req.params.id;
+    const categoryById = await Category.findById(categoryId).limit(limitNumber);
+
+    res.render("categories", { categoryById });
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+    console.log(error);
+  }
+};
+
 // async function insertDymayRecipeData() {
 //   try {
 //     await Recipe.insertMany([
