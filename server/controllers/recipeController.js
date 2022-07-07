@@ -8,7 +8,7 @@ exports.homepage = async (req, res) => {
   try {
     const limitNumber = 5;
     const categories = await Category.find({}).limit(limitNumber);
-    res.render("index", categories);
+    res.render("index", { categories });
   } catch (error) {
     res.status(500).send({ message: error.message });
     console.log(error);
