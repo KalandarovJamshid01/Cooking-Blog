@@ -9,8 +9,7 @@ require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-console.log("hello");
-app.use(expressLayouts());
+app.use(expressLayouts);
 console.log("salom");
 app.set("layout", "./layouts/main");
 app.set("view", "ejs");
