@@ -15,3 +15,4 @@ db.once("open", function () {
 //MOdels
 
 require("./Category");
+require("./Recipe");

@@ -36,7 +36,7 @@
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
   <% if(categories !=''){ %> <% categories.forEach(function (category,index) {
   %>
-  <a href="#" class="col text-center category__link">
+  <a href="/categories" class="col text-center category__link">
     <div class="category__img shadow">
       <img
         src="/img/<%- category.image %>"
@@ -54,11 +54,6 @@
     <div class="pt-1">View All</div>
   </a>
 </div>
-
-//
-<!--
-//   Latest start
-// -->
 
 <section class="pb-4 pt-4">
   <div class="d-flex mb-2 align-items-center">
