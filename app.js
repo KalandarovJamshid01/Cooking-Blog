@@ -9,10 +9,11 @@ require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+console.log("hello");
 app.use(expressLayouts());
+console.log("salom");
 app.set("layout", "./layouts/main");
-
+app.set("view", "ejs");
 const routes = require("./server/routes/recipeRoutes.js");
 app.use("/", routes);
 app.listen(port, () => {
