@@ -6,9 +6,11 @@ const Category = require("../models/Category");
 //*HomePage
 exports.homepage = async (req, res) => {
   try {
-    res.render("index");
+    const limitNumber = 5;
+    const categories = await Category.find({}).limit(limitNumber);
+    res.render("index", categories);
   } catch (error) {
-    res.status(500).send({message:error.message});
+    res.status(500).send({ message: error.message });
     console.log(error);
   }
 };
