@@ -52,6 +52,7 @@ exports.exploreRecipe = async (req, res) => {
 
 exports.exploreCategoriesById = async (req, res) => {
   try {
+    const limitNumber = 5;
     let categoryId = req.params.id;
     const categoryById = await Category.findById(categoryId).limit(limitNumber);
 
