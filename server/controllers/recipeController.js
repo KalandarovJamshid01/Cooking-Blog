@@ -92,6 +92,22 @@ exports.exploreLatest = async (req, res) => {
   }
 };
 
+exports.exploreRandom = async (req, res) => {
+  try {
+    let count = await Recipe.find().countDocuments();
+    let random = Math.floor(Math.random() * count);
+    let recipe = await Recipe.findOne().skip(random).exec();
+    res.render("explore-random", { recipe });
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+    console.log(error);
+  }
+};
+
+exports.submitRecipe = async (req, res) => {
+  res.render("submit-recipe", {});
+};
+
 // async function insertDymayRecipeData() {
 //   try {
 //     await Recipe.insertMany([
