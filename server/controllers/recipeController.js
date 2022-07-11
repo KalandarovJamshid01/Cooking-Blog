@@ -136,7 +136,7 @@ exports.submitRecipeOnPost = async (req, res) => {
       email: req.body.email,
       ingredients: req.body.ingredients,
       category: req.body.category,
-      image: newImageName,
+      image: "/uploads/"+newImageName,
     });
 
     await newRecipe.save();
@@ -172,9 +172,21 @@ exports.submitRecipeOnPost = async (req, res) => {
 // }
 // updateRecipe();
 
-// async function insertDymayRecipeData() {
-//   try {
-//     await Recipe.insertMany([
+async function insertDymayRecipeData() {
+  try {
+    await Recipe.insertMany([
+      {
+        name: "Cauliflower PizzasLDGNJLGMfmOFMFMM Crust (with BBQ Chicken Pizza)",
+        description: `Recipe Description Goes Here`,
+        email: "recipeemail@raddy.co.uk",
+        ingredients: [
+          "1 level teaspoon baking powder",
+          "1 level teaspoon cayenne pepper",
+          "1 level teaspoon hot smoked paprika",
+        ],
+        category: "American",
+        image:"https://www.themealdb.com/images/media/meals/wwuqvt1487345467.jpg",
+      },
 //       {
 //         name: "Recipe Name Goes Here",
 //         description: `Recipe Description Goes Here`,
@@ -187,21 +199,9 @@ exports.submitRecipeOnPost = async (req, res) => {
 //         category: "American",
 //         image: "southern-friend-chicken.jpg",
 //       },
-//       {
-//         name: "Recipe Name Goes Here",
-//         description: `Recipe Description Goes Here`,
-//         email: "recipeemail@raddy.co.uk",
-//         ingredients: [
-//           "1 level teaspoon baking powder",
-//           "1 level teaspoon cayenne pepper",
-//           "1 level teaspoon hot smoked paprika",
-//         ],
-//         category: "American",
-//         image: "southern-friend-chicken.jpg",
-//       },
-//     ]);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+    ]);
+  } catch (err) {
+    console.log(err);
+  }
+}
 // insertDymayRecipeData();

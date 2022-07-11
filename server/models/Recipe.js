@@ -15,4 +15,4 @@ const recipeSchema = new mongoose.Schema({
 
 recipeSchema.index({ name: "text", description: "text" });
 
-module.exports = mongoose.model("Recipe", recipeSchema);
+module.exports = mongoose.model("recipe", recipeSchema);
