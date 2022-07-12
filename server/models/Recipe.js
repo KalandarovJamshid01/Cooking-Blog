@@ -13,6 +13,6 @@ const recipeSchema = new mongoose.Schema({
   image: { type: String, required: true },
 });
 
-recipeSchema.index({ name: "text", description: "text" });
+recipeSchema.index({ name: "text", description: "text", category:"text"});
 
 module.exports = mongoose.model("recipe", recipeSchema);
